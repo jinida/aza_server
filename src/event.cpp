@@ -38,14 +38,14 @@ Event::Event(int evt_no, int evt_pri, int genAddr)
 	this->eventStatus = GENERATED;
 }
 
-Event::Event(int evt_no, int evt_pri, int genAddr, Packet evt_pkt)
+Event::Event(int evt_no, int evt_pri, int genAddr, Session* pSession)
 {
 	this->event_no = evt_no;
 	this->event_pri = evt_pri;
 	this->event_gen_addr = genAddr;
 	this->event_handler_adrr = -1;
 	this->eventStatus = GENERATED;
-	this->event_pkt = evt_pkt;
+	this->pSession = pSession;
 }
 
 Event::Event(const Event& evt)
@@ -55,7 +55,7 @@ Event::Event(const Event& evt)
 	this->event_gen_addr = evt.genAddr;
 	this->event_handler_adrr = evt.event_handler_adrr;
 	this->eventStatus = evt.eventStatus;
-	this->event_pkt = evt.evt_pkt;
+	this->pSession = evt.pSession;
 }
 
 Event* genRandEvent(int evt_no)

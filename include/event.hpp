@@ -6,6 +6,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <time.h>
+#include <server.hpp>
 #define LEN_HEADER 4
 #define MAX_LEN_BODY 512
 using namespace std;
@@ -41,12 +42,14 @@ public:
 	Event() = default;
 	~Event() = default;
 	Event(int evt_no, int evt_pri, int genAddr);
-	Event(int evt_no, int evt_pri, int genAddr, Packet evt_pkt);
-	Event(const Event& evt) const;
+	Event(int evt_no, int evt_pri, int genAddr, Session* pSession);
+	Event(const Event& evt);
 	void setEventNo(int evtNo) { event_no = evtNo; }
 	void setEventGenAddr(int evtGenAddr) { event_gen_addr = evtGenAddr; }
 	void setEventHandlerAddr(int evtHndlerAddr) { event_handler_adrr = evtHndlerAddr; }
 	void setEventPriority(int evtPrior) { event_pri = evtPrior; }
+	enum EventStatus { GENERATED, ENQUEUED, PROCESSED, UNDEFINED };
+	
 	void setEventStatus(EventStatus evtStatus) { eventStatus = evtStatus; }
 	void setEventElapsedTime(double t_elapsed_ms) { t_elapsed_time_ms = t_elapsed_ms; }
 	void setEventGenTime(timespec t_gen) { t_event_gen = t_gen; }
@@ -60,7 +63,6 @@ public:
 	Packet& getEventPacket() { return event_pkt; }
 	bool operator>(Event& e) { return event_pri > e.event_pri; }
 	bool operator<(Event& e) { return event_pri < e.event_pri; }
-	enum EventStatus { GENERATED, ENQUEUED, PROCESSED, UNDEFINED };
 	
 private:
 	int event_no;
@@ -71,6 +73,7 @@ private:
 	timespec t_event_proc;
 	Packet event_pkt;
 	double t_elapsed_time_ms;
+	std::shared_ptr<Session> pSession;
 	EventStatus eventStatus;
 };
 

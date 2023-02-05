@@ -1,15 +1,17 @@
-// #ifndef LOGGER_H
-// #define LOGGER_H
-// #include "spdlog/spdlog.h"
-// #include <string>
+#ifndef LOGGER_H
+#define LOGGER_H
+#include <string>
+#include "spdlog/spdlog.h"
 
-// class Logger
-// {
-//     public:
-//         Logger();
-//         ~Logger() {}
-//     private:
+class Logger
+{
+    friend ostream& operator<<(ostream& fout, const Event& e);
+    public:
+        Logger();
+        ~Logger() = default;
+        enum LoggerStatus { INFO, WARNING, ERROR, ETC };
+    private:
         
-// }
+}
 
-// #endif LOGGER_H
+#endif LOGGER_H
