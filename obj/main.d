@@ -1170,8 +1170,9 @@ obj/main.o: src/main.cpp /usr/include/stdc-predef.h \
  /usr/local/include/boost/asio/writable_pipe.hpp \
  /usr/local/include/boost/asio/write_at.hpp \
  /usr/local/include/boost/asio/impl/write_at.hpp include/server.hpp \
- /usr/include/c++/7/iostream /usr/include/c++/7/deque \
- /usr/include/c++/7/bits/stl_deque.h /usr/include/c++/7/bits/deque.tcc \
+ /usr/include/c++/7/iostream /usr/include/c++/7/queue \
+ /usr/include/c++/7/deque /usr/include/c++/7/bits/stl_deque.h \
+ /usr/include/c++/7/bits/deque.tcc /usr/include/c++/7/bits/stl_queue.h \
  include/event.hpp /usr/include/c++/7/iomanip /usr/include/c++/7/locale \
  /usr/include/c++/7/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/time_members.h \
@@ -1181,4 +1182,64 @@ obj/main.o: src/main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/7/bits/locale_conv.h \
  /usr/include/c++/7/bits/stringfwd.h /usr/include/c++/7/bits/allocator.h \
  /usr/include/c++/7/bits/codecvt.h /usr/include/c++/7/bits/unique_ptr.h \
- /usr/include/c++/7/bits/quoted_string.h
+ /usr/include/c++/7/bits/quoted_string.h include/session.hpp \
+ include/server.hpp include/event.hpp include/logger.hpp \
+ /usr/include/c++/7/fstream \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/c++io.h \
+ /usr/include/c++/7/bits/fstream.tcc /usr/local/include/spdlog/spdlog.h \
+ /usr/local/include/spdlog/common.h /usr/local/include/spdlog/tweakme.h \
+ /usr/local/include/spdlog/details/null_mutex.h \
+ /usr/local/include/spdlog/fmt/fmt.h \
+ /usr/local/include/spdlog/fmt/bundled/core.h \
+ /usr/local/include/spdlog/fmt/bundled/format.h \
+ /usr/local/include/spdlog/fmt/bundled/core.h \
+ /usr/local/include/spdlog/fmt/bundled/format-inl.h \
+ /usr/local/include/spdlog/fmt/bundled/format.h \
+ /usr/local/include/spdlog/common-inl.h \
+ /usr/local/include/spdlog/details/registry.h \
+ /usr/local/include/spdlog/details/periodic_worker.h \
+ /usr/local/include/spdlog/details/periodic_worker-inl.h \
+ /usr/include/c++/7/unordered_map /usr/include/c++/7/bits/hashtable.h \
+ /usr/include/c++/7/bits/hashtable_policy.h \
+ /usr/include/c++/7/bits/unordered_map.h \
+ /usr/local/include/spdlog/details/registry-inl.h \
+ /usr/local/include/spdlog/logger.h \
+ /usr/local/include/spdlog/details/log_msg.h \
+ /usr/local/include/spdlog/details/log_msg-inl.h \
+ /usr/local/include/spdlog/details/os.h \
+ /usr/local/include/spdlog/details/os-inl.h \
+ /usr/include/x86_64-linux-gnu/sys/syscall.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+ /usr/include/x86_64-linux-gnu/bits/syscall.h \
+ /usr/local/include/spdlog/details/backtracer.h \
+ /usr/local/include/spdlog/details/log_msg_buffer.h \
+ /usr/local/include/spdlog/details/log_msg_buffer-inl.h \
+ /usr/local/include/spdlog/details/circular_q.h \
+ /usr/local/include/spdlog/details/backtracer-inl.h \
+ /usr/local/include/spdlog/logger-inl.h \
+ /usr/local/include/spdlog/sinks/sink.h \
+ /usr/local/include/spdlog/formatter.h \
+ /usr/local/include/spdlog/sinks/sink-inl.h \
+ /usr/local/include/spdlog/pattern_formatter.h \
+ /usr/local/include/spdlog/pattern_formatter-inl.h \
+ /usr/local/include/spdlog/details/fmt_helper.h \
+ /usr/local/include/spdlog/sinks/ansicolor_sink.h \
+ /usr/local/include/spdlog/details/console_globals.h \
+ /usr/local/include/spdlog/sinks/ansicolor_sink-inl.h \
+ /usr/local/include/spdlog/version.h \
+ /usr/local/include/spdlog/details/synchronous_factory.h \
+ /usr/local/include/spdlog/spdlog-inl.h \
+ /usr/local/include/spdlog/sinks/basic_file_sink.h \
+ /usr/local/include/spdlog/details/file_helper.h \
+ /usr/local/include/spdlog/details/file_helper-inl.h \
+ /usr/local/include/spdlog/sinks/base_sink.h \
+ /usr/local/include/spdlog/sinks/base_sink-inl.h \
+ /usr/local/include/spdlog/sinks/basic_file_sink-inl.h \
+ /usr/local/include/spdlog/async.h \
+ /usr/local/include/spdlog/async_logger.h \
+ /usr/local/include/spdlog/async_logger-inl.h \
+ /usr/local/include/spdlog/details/thread_pool.h \
+ /usr/local/include/spdlog/details/mpmc_blocking_q.h \
+ /usr/local/include/spdlog/details/thread_pool-inl.h

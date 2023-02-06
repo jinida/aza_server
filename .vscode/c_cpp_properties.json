@@ -1,10 +1,12 @@
 {
     "configurations": [
         {
-            "name": "linux-gcc-x64",
+            "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/local/include/boost/**"
+                "/usr/include/**",
+                "/usr/local/**",
+                "${workspaceFolder}/include/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",

@@ -1,44 +1,22 @@
-#ifndef SERVER_H
-#define SERVER_H
+#ifndef SERVER_HPP
+#define SERVER_HPP
 #include <boost/asio.hpp>
 #include <iostream>
-#include <cstdlib>
-#include <memory>
-#include <utility>
-#include <deque>
 #include <queue>
 #include "event.hpp"
 #include "server.hpp"
+#include "logger.hpp"
 using boost::asio::ip::tcp;
-typedef std::priority_queue<Event> evt_queue;
-
-class Session : public std::enable_shared_from_this<Session>
-{
-public:
-    Session() = delete;
-    Session(tcp::socket socket, int session_id)
-        : socket_(std::move(socket)), session_id_(session_id)
-    {
-    }
-    ~Session() = delete;
-    void start() { do_read_header(); }
-    void deliver() {}
-private:
-    void do_read_header();
-    void do_read_body();
-    void do_write();
-    tcp::socket socket_;
-    int session_id_;
-    Event read_event;
-    evt_queue write_event;
-};
+class Event;
+class Session;
+class Logger;
 
 class Server
 {
 public:
-    Server() = delete;
-    Server(boost::asio::io_context &io_context, short port)
-        : acceptor_(io_context, tcp::endpoint(tcp::v4(), port)), sessionNum(0)
+    Server(boost::asio::io_context &io_context, short port, std::priority_queue<Event>* pEvt_queue, std::queue<Logger>* pLogger_queue, 
+        std::shared_ptr<spdlog::logger> pLogger)
+        : acceptor_(io_context, tcp::endpoint(tcp::v4(), port)), sessionNum(0), pEvt_queue_(pEvt_queue), pLogger_queue_(pLogger_queue), pLogger_(pLogger)
     {
         do_accept();
     }
@@ -46,7 +24,10 @@ public:
 
 private:
     void do_accept();
-    // std::shared_ptr<Session> pSession;
+    std::priority_queue<Event>* pEvt_queue_;
+    std::queue<Logger>* pLogger_queue_;
+    std::shared_ptr<spdlog::logger> pLogger_;
+    std::mutex* pMutex;
     int sessionNum;
     tcp::acceptor acceptor_;
 };

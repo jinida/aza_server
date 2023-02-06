@@ -1170,8 +1170,9 @@ obj/server.o: src/server.cpp /usr/include/stdc-predef.h \
  /usr/local/include/boost/asio/writable_pipe.hpp \
  /usr/local/include/boost/asio/write_at.hpp \
  /usr/local/include/boost/asio/impl/write_at.hpp \
- /usr/include/c++/7/iostream /usr/include/c++/7/deque \
- /usr/include/c++/7/bits/stl_deque.h /usr/include/c++/7/bits/deque.tcc \
+ /usr/include/c++/7/iostream /usr/include/c++/7/queue \
+ /usr/include/c++/7/deque /usr/include/c++/7/bits/stl_deque.h \
+ /usr/include/c++/7/bits/deque.tcc /usr/include/c++/7/bits/stl_queue.h \
  include/event.hpp /usr/include/c++/7/iomanip /usr/include/c++/7/locale \
  /usr/include/c++/7/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/time_members.h \
@@ -1181,4 +1182,5 @@ obj/server.o: src/server.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/7/bits/locale_conv.h \
  /usr/include/c++/7/bits/stringfwd.h /usr/include/c++/7/bits/allocator.h \
  /usr/include/c++/7/bits/codecvt.h /usr/include/c++/7/bits/unique_ptr.h \
- /usr/include/c++/7/bits/quoted_string.h
+ /usr/include/c++/7/bits/quoted_string.h include/session.hpp \
+ include/server.hpp

@@ -10,7 +10,6 @@ SRCS = $(notdir $(wildcard $(SRC_DIR)/*.cpp))
 OBJS = $(SRCS:.cpp=.o)
 OBJECTS = $(patsubst %.o,$(OBJ_DIR)/%.o,$(OBJS))
 DEPS = $(OBJECTS:.o=.d)
-LIBS = $(OPENCV)
 
 all: main
 

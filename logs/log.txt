@@ -1,0 +1,1 @@
+[2023-02-06 06:48:48] [thread 5029] [I]   [SERVER] Initialize AZA! Server

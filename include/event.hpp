@@ -1,18 +1,21 @@
-#ifndef EVENT_H
-#define EVENT_H
+#ifndef EVENT_HPP
+#define EVENT_HPP
 #include <iostream>
 #include <iomanip>
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
+#include <queue>
 #include <time.h>
+#include "session.hpp"
+
 #define LEN_HEADER 4
 #define MAX_LEN_BODY 512
 using namespace std;
 
 #define MAX_EVENT_PRIORRITY 10
 #define NUM_EVENT_GENERATOR 100
-
+class Session;
 class Packet
 {
 public:
@@ -41,12 +44,14 @@ public:
 	Event() = default;
 	~Event() = default;
 	Event(int evt_no, int evt_pri, int genAddr);
-	Event(int evt_no, int evt_pri, int genAddr, Packet evt_pkt);
-	Event(const Event& evt) const;
+	Event(int evt_no, int evt_pri, int genAddr, std::shared_ptr<Session> pSession);
+	Event(const Event& evt);
 	void setEventNo(int evtNo) { event_no = evtNo; }
 	void setEventGenAddr(int evtGenAddr) { event_gen_addr = evtGenAddr; }
 	void setEventHandlerAddr(int evtHndlerAddr) { event_handler_adrr = evtHndlerAddr; }
 	void setEventPriority(int evtPrior) { event_pri = evtPrior; }
+	enum EventStatus { GENERATED, ENQUEUED, PROCESSED, UNDEFINED };
+	
 	void setEventStatus(EventStatus evtStatus) { eventStatus = evtStatus; }
 	void setEventElapsedTime(double t_elapsed_ms) { t_elapsed_time_ms = t_elapsed_ms; }
 	void setEventGenTime(timespec t_gen) { t_event_gen = t_gen; }
@@ -58,9 +63,10 @@ public:
 	timespec getEventGenTime() { return t_event_gen; }
 	timespec getEventProcTime() { return t_event_proc; }
 	Packet& getEventPacket() { return event_pkt; }
-	bool operator>(Event& e) { return event_pri > e.event_pri; }
-	bool operator<(Event& e) { return event_pri < e.event_pri; }
-	enum EventStatus { GENERATED, ENQUEUED, PROCESSED, UNDEFINED };
+	bool operator>(const Event& e)  const { return this->event_pri > e.event_pri; }
+	bool operator>=(const Event& e) const  { return this->event_pri >= e.event_pri; }
+	bool operator<(const Event& e)  const { return this->event_pri < e.event_pri; }
+	bool operator<=(const Event& e) const  { return this->event_pri <= e.event_pri; }
 	
 private:
 	int event_no;
@@ -71,6 +77,7 @@ private:
 	timespec t_event_proc;
 	Packet event_pkt;
 	double t_elapsed_time_ms;
+	std::shared_ptr<Session> pSession_;
 	EventStatus eventStatus;
 };
 
