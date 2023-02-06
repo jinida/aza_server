@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef LOGGER_HPP
 #define LOGGER_HPP
 #include <string>
@@ -33,3 +34,22 @@ private:
 };
 
 #endif
+=======
+#ifndef LOGGER_H
+#define LOGGER_H
+#include <string>
+#include "spdlog/spdlog.h"
+
+class Logger
+{
+    friend ostream& operator<<(ostream& fout, const Event& e);
+    public:
+        Logger();
+        ~Logger() = default;
+        enum LoggerStatus { INFO, WARNING, ERROR, ETC };
+    private:
+        
+}
+
+#endif LOGGER_H
+>>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd

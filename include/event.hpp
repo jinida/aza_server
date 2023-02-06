@@ -7,8 +7,12 @@
 #include <cstdlib>
 #include <queue>
 #include <time.h>
+<<<<<<< HEAD
 #include "session.hpp"
 
+=======
+#include <server.hpp>
+>>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
 #define LEN_HEADER 4
 #define MAX_LEN_BODY 512
 using namespace std;
@@ -44,7 +48,11 @@ public:
 	Event() = default;
 	~Event() = default;
 	Event(int evt_no, int evt_pri, int genAddr);
+<<<<<<< HEAD
 	Event(int evt_no, int evt_pri, int genAddr, std::shared_ptr<Session> pSession);
+=======
+	Event(int evt_no, int evt_pri, int genAddr, Session* pSession);
+>>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
 	Event(const Event& evt);
 	void setEventNo(int evtNo) { event_no = evtNo; }
 	void setEventGenAddr(int evtGenAddr) { event_gen_addr = evtGenAddr; }
@@ -63,10 +71,15 @@ public:
 	timespec getEventGenTime() { return t_event_gen; }
 	timespec getEventProcTime() { return t_event_proc; }
 	Packet& getEventPacket() { return event_pkt; }
+<<<<<<< HEAD
 	bool operator>(const Event& e)  const { return this->event_pri > e.event_pri; }
 	bool operator>=(const Event& e) const  { return this->event_pri >= e.event_pri; }
 	bool operator<(const Event& e)  const { return this->event_pri < e.event_pri; }
 	bool operator<=(const Event& e) const  { return this->event_pri <= e.event_pri; }
+=======
+	bool operator>(Event& e) { return event_pri > e.event_pri; }
+	bool operator<(Event& e) { return event_pri < e.event_pri; }
+>>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
 	
 private:
 	int event_no;
@@ -77,7 +90,11 @@ private:
 	timespec t_event_proc;
 	Packet event_pkt;
 	double t_elapsed_time_ms;
+<<<<<<< HEAD
 	std::shared_ptr<Session> pSession_;
+=======
+	std::shared_ptr<Session> pSession;
+>>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
 	EventStatus eventStatus;
 };
 

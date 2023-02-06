@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .vscode
 obj
 *.o
 *.d
+=======
+.vscode
+>>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
