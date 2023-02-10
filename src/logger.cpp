@@ -16,7 +16,7 @@ std::string Logger::makeConetnts()
     }
 }
 
-void Logger::printLog()
+void Logger::printLog(std::shared_ptr<spdlog::logger> pLogger_)
 {
     std::string contents;
 
@@ -25,16 +25,16 @@ void Logger::printLog()
         switch (type_)
         {
         case LoggerType::SERVER:
-            contents = fmt::format("{:>10} {}", "[SERVER]", "Attempt to write an unprocessed Logger.");
+            contents = fmt::format("{:<10} {}", "[SERVER]", "Attempt to write an unprocessed Logger.");
             break;
         case LoggerType::PROCESS:
-            contents = fmt::format("{:>10} {}", "[PROCESS]", "Attempt to write an unprocessed Logger.");
+            contents = fmt::format("{:<10} {}", "[PROCESS]", "Attempt to write an unprocessed Logger.");
             break;
         case LoggerType::UNDEFINED:
             contents = fmt::format("{:>10} {}", "[UNDEFINED]", "Attempt to write an unprocessed Logger.");
             break;
         default:
-            contents = fmt::format("{:>10} {}", "[UNKNOWN]", "Attempt to write an unprocessed Logger.");
+            contents = fmt::format("{:<10} {}", "[UNKNOWN]", "Attempt to write an unprocessed Logger.");
             break;
         }
         pLogger_->warn(contents);

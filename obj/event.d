@@ -144,7 +144,6 @@ obj/event.o: src/event.cpp /usr/include/stdc-predef.h include/event.hpp \
  /usr/include/c++/7/bits/uses_allocator.h \
  /usr/include/c++/7/bits/invoke.h /usr/include/c++/7/bits/quoted_string.h \
  /usr/include/c++/7/sstream /usr/include/c++/7/bits/sstream.tcc \
- /usr/include/c++/7/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/c++/7/queue /usr/include/c++/7/deque \
  /usr/include/c++/7/bits/stl_construct.h \
  /usr/include/c++/7/bits/stl_uninitialized.h \
@@ -152,7 +151,23 @@ obj/event.o: src/event.cpp /usr/include/stdc-predef.h include/event.hpp \
  /usr/include/c++/7/vector /usr/include/c++/7/bits/stl_vector.h \
  /usr/include/c++/7/bits/stl_bvector.h /usr/include/c++/7/bits/vector.tcc \
  /usr/include/c++/7/bits/stl_heap.h /usr/include/c++/7/bits/stl_queue.h \
- include/session.hpp /usr/local/include/boost/asio.hpp \
+ /usr/include/c++/7/thread /usr/include/c++/7/chrono \
+ /usr/include/c++/7/ratio /usr/include/c++/7/limits \
+ /usr/include/c++/7/bits/parse_numbers.h /usr/include/c++/7/memory \
+ /usr/include/c++/7/bits/stl_tempbuf.h \
+ /usr/include/c++/7/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/7/ext/concurrence.h \
+ /usr/include/c++/7/bits/unique_ptr.h \
+ /usr/include/c++/7/bits/shared_ptr.h \
+ /usr/include/c++/7/bits/shared_ptr_base.h \
+ /usr/include/c++/7/bits/allocated_ptr.h \
+ /usr/include/c++/7/bits/refwrap.h \
+ /usr/include/c++/7/ext/aligned_buffer.h \
+ /usr/include/c++/7/bits/shared_ptr_atomic.h \
+ /usr/include/c++/7/bits/atomic_base.h \
+ /usr/include/c++/7/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/7/backward/auto_ptr.h include/session.hpp \
+ /usr/local/include/boost/asio.hpp \
  /usr/local/include/boost/asio/any_completion_executor.hpp \
  /usr/local/include/boost/asio/detail/config.hpp \
  /usr/local/include/boost/config.hpp \
@@ -187,20 +202,8 @@ obj/event.o: src/event.cpp /usr/include/stdc-predef.h include/event.hpp \
  /usr/local/include/boost/asio/execution/execute.hpp \
  /usr/local/include/boost/asio/execution/detail/as_invocable.hpp \
  /usr/local/include/boost/asio/detail/atomic_count.hpp \
- /usr/include/c++/7/atomic /usr/include/c++/7/bits/atomic_base.h \
- /usr/include/c++/7/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/7/atomic \
  /usr/local/include/boost/asio/detail/memory.hpp \
- /usr/include/c++/7/memory /usr/include/c++/7/bits/stl_tempbuf.h \
- /usr/include/c++/7/bits/stl_raw_storage_iter.h \
- /usr/include/c++/7/ext/concurrence.h \
- /usr/include/c++/7/bits/unique_ptr.h \
- /usr/include/c++/7/bits/shared_ptr.h \
- /usr/include/c++/7/bits/shared_ptr_base.h \
- /usr/include/c++/7/bits/allocated_ptr.h \
- /usr/include/c++/7/bits/refwrap.h \
- /usr/include/c++/7/ext/aligned_buffer.h \
- /usr/include/c++/7/bits/shared_ptr_atomic.h \
- /usr/include/c++/7/backward/auto_ptr.h \
  /usr/local/include/boost/asio/detail/cstdint.hpp \
  /usr/local/include/boost/asio/detail/throw_exception.hpp \
  /usr/local/include/boost/throw_exception.hpp \
@@ -208,7 +211,8 @@ obj/event.o: src/event.cpp /usr/include/stdc-predef.h include/event.hpp \
  /usr/local/include/boost/assert/source_location.hpp \
  /usr/local/include/boost/current_function.hpp \
  /usr/local/include/boost/config/workaround.hpp \
- /usr/local/include/boost/cstdint.hpp \
+ /usr/local/include/boost/cstdint.hpp /usr/include/c++/7/cstring \
+ /usr/include/string.h /usr/include/strings.h \
  /usr/local/include/boost/align/aligned_alloc.hpp \
  /usr/local/include/boost/align/detail/aligned_alloc_posix.hpp \
  /usr/local/include/boost/align/detail/is_alignment.hpp \
@@ -322,10 +326,7 @@ obj/event.o: src/event.cpp /usr/include/stdc-predef.h include/event.hpp \
  /usr/local/include/boost/system/error_category.hpp \
  /usr/local/include/boost/system/detail/error_category_impl.hpp \
  /usr/local/include/boost/system/detail/std_category_impl.hpp \
- /usr/include/c++/7/mutex /usr/include/c++/7/chrono \
- /usr/include/c++/7/ratio /usr/include/c++/7/limits \
- /usr/include/c++/7/bits/parse_numbers.h \
- /usr/include/c++/7/bits/std_mutex.h \
+ /usr/include/c++/7/mutex /usr/include/c++/7/bits/std_mutex.h \
  /usr/local/include/boost/system/error_condition.hpp \
  /usr/local/include/boost/system/errc.hpp \
  /usr/local/include/boost/system/generic_category.hpp \
@@ -977,8 +978,7 @@ obj/event.o: src/event.cpp /usr/include/stdc-predef.h include/event.hpp \
  /usr/local/include/boost/asio/local/stream_protocol.hpp \
  /usr/local/include/boost/asio/packaged_task.hpp \
  /usr/local/include/boost/asio/detail/future.hpp \
- /usr/include/c++/7/future /usr/include/c++/7/thread \
- /usr/include/c++/7/condition_variable \
+ /usr/include/c++/7/future /usr/include/c++/7/condition_variable \
  /usr/include/c++/7/bits/atomic_futex.h \
  /usr/local/include/boost/asio/placeholders.hpp \
  /usr/local/include/boost/bind/arg.hpp \
@@ -1181,4 +1181,56 @@ obj/event.o: src/event.cpp /usr/include/stdc-predef.h include/event.hpp \
  /usr/local/include/boost/asio/writable_pipe.hpp \
  /usr/local/include/boost/asio/write_at.hpp \
  /usr/local/include/boost/asio/impl/write_at.hpp include/event.hpp \
- include/server.hpp
+ include/server.hpp include/logger.hpp /usr/include/c++/7/fstream \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/c++io.h \
+ /usr/include/c++/7/bits/fstream.tcc /usr/local/include/spdlog/spdlog.h \
+ /usr/local/include/spdlog/common.h /usr/local/include/spdlog/tweakme.h \
+ /usr/local/include/spdlog/details/null_mutex.h \
+ /usr/local/include/spdlog/fmt/fmt.h \
+ /usr/local/include/spdlog/fmt/bundled/core.h \
+ /usr/local/include/spdlog/fmt/bundled/format.h \
+ /usr/local/include/spdlog/fmt/bundled/core.h \
+ /usr/local/include/spdlog/fmt/bundled/format-inl.h \
+ /usr/local/include/spdlog/fmt/bundled/format.h \
+ /usr/local/include/spdlog/common-inl.h \
+ /usr/local/include/spdlog/details/registry.h \
+ /usr/local/include/spdlog/details/periodic_worker.h \
+ /usr/local/include/spdlog/details/periodic_worker-inl.h \
+ /usr/include/c++/7/unordered_map /usr/include/c++/7/bits/hashtable.h \
+ /usr/include/c++/7/bits/hashtable_policy.h \
+ /usr/include/c++/7/bits/unordered_map.h \
+ /usr/local/include/spdlog/details/registry-inl.h \
+ /usr/local/include/spdlog/logger.h \
+ /usr/local/include/spdlog/details/log_msg.h \
+ /usr/local/include/spdlog/details/log_msg-inl.h \
+ /usr/local/include/spdlog/details/os.h \
+ /usr/local/include/spdlog/details/os-inl.h \
+ /usr/include/x86_64-linux-gnu/sys/syscall.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+ /usr/include/x86_64-linux-gnu/bits/syscall.h \
+ /usr/local/include/spdlog/details/backtracer.h \
+ /usr/local/include/spdlog/details/log_msg_buffer.h \
+ /usr/local/include/spdlog/details/log_msg_buffer-inl.h \
+ /usr/local/include/spdlog/details/circular_q.h \
+ /usr/local/include/spdlog/details/backtracer-inl.h \
+ /usr/local/include/spdlog/logger-inl.h \
+ /usr/local/include/spdlog/sinks/sink.h \
+ /usr/local/include/spdlog/formatter.h \
+ /usr/local/include/spdlog/sinks/sink-inl.h \
+ /usr/local/include/spdlog/pattern_formatter.h \
+ /usr/local/include/spdlog/pattern_formatter-inl.h \
+ /usr/local/include/spdlog/details/fmt_helper.h \
+ /usr/local/include/spdlog/sinks/ansicolor_sink.h \
+ /usr/local/include/spdlog/details/console_globals.h \
+ /usr/local/include/spdlog/sinks/ansicolor_sink-inl.h \
+ /usr/local/include/spdlog/version.h \
+ /usr/local/include/spdlog/details/synchronous_factory.h \
+ /usr/local/include/spdlog/spdlog-inl.h \
+ /usr/local/include/spdlog/sinks/basic_file_sink.h \
+ /usr/local/include/spdlog/details/file_helper.h \
+ /usr/local/include/spdlog/details/file_helper-inl.h \
+ /usr/local/include/spdlog/sinks/base_sink.h \
+ /usr/local/include/spdlog/sinks/base_sink-inl.h \
+ /usr/local/include/spdlog/sinks/basic_file_sink-inl.h

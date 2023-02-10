@@ -29,7 +29,7 @@ bool Packet::decodeHeader()
 	return true;
 }
 
-Event::Event(int evt_no, int evt_pri, int genAddr)
+Event::Event(int evt_no, int evt_pri, uint64_t genAddr)
 {
 	this->event_no = evt_no;
 	this->event_pri = evt_pri;
@@ -38,22 +38,14 @@ Event::Event(int evt_no, int evt_pri, int genAddr)
 	this->eventStatus = GENERATED;
 }
 
-<<<<<<< HEAD
-Event::Event(int evt_no, int evt_pri, int genAddr, std::shared_ptr<Session> pSession)
-=======
-Event::Event(int evt_no, int evt_pri, int genAddr, Session* pSession)
->>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
+Event::Event(int evt_no, int evt_pri, uint64_t genAddr, std::shared_ptr<Session> pSession)
 {
 	this->event_no = evt_no;
 	this->event_pri = evt_pri;
 	this->event_gen_addr = genAddr;
 	this->event_handler_adrr = -1;
 	this->eventStatus = GENERATED;
-<<<<<<< HEAD
 	this->pSession_ = pSession;
-=======
-	this->pSession = pSession;
->>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
 }
 
 Event::Event(const Event& evt)
@@ -63,11 +55,7 @@ Event::Event(const Event& evt)
 	this->event_gen_addr = evt.event_gen_addr;
 	this->event_handler_adrr = evt.event_handler_adrr;
 	this->eventStatus = evt.eventStatus;
-<<<<<<< HEAD
 	this->pSession_ = evt.pSession_;
-=======
-	this->pSession = evt.pSession;
->>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
 }
 
 Event* genRandEvent(int evt_no)
@@ -79,6 +67,11 @@ Event* genRandEvent(int evt_no)
 	evt_generator_id = rand() & NUM_EVENT_GENERATOR;
 	pEv = new Event(evt_no, evt_prio, evt_generator_id);
 	return pEv;
+}
+
+std::string Event::createEventInfo()
+{
+	return fmt::format("(no: {:>03}, pri: {:>03})", this->event_no, this->event_pri);;
 }
 
 ostream& operator<<(ostream& fout, const Event& evt)

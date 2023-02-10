@@ -2,17 +2,11 @@
 #define EVENT_HPP
 #include <iostream>
 #include <iomanip>
-#include <cstring>
-#include <cstdio>
-#include <cstdlib>
 #include <queue>
 #include <time.h>
-<<<<<<< HEAD
+#include <thread>
 #include "session.hpp"
 
-=======
-#include <server.hpp>
->>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
 #define LEN_HEADER 4
 #define MAX_LEN_BODY 512
 using namespace std;
@@ -47,15 +41,12 @@ class Event
 public:
 	Event() = default;
 	~Event() = default;
-	Event(int evt_no, int evt_pri, int genAddr);
-<<<<<<< HEAD
-	Event(int evt_no, int evt_pri, int genAddr, std::shared_ptr<Session> pSession);
-=======
-	Event(int evt_no, int evt_pri, int genAddr, Session* pSession);
->>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
+	Event(int evt_no, int evt_pri, uint64_t genAddr);
+	Event(int evt_no, int evt_pri, uint64_t genAddr, Packet&& pkt);
+	Event(int evt_no, int evt_pri, uint64_t genAddr, std::shared_ptr<Session> pSession);
 	Event(const Event& evt);
 	void setEventNo(int evtNo) { event_no = evtNo; }
-	void setEventGenAddr(int evtGenAddr) { event_gen_addr = evtGenAddr; }
+	void setEventGenAddr(uint64_t evtGenAddr) { event_gen_addr = evtGenAddr; }
 	void setEventHandlerAddr(int evtHndlerAddr) { event_handler_adrr = evtHndlerAddr; }
 	void setEventPriority(int evtPrior) { event_pri = evtPrior; }
 	enum EventStatus { GENERATED, ENQUEUED, PROCESSED, UNDEFINED };
@@ -71,30 +62,22 @@ public:
 	timespec getEventGenTime() { return t_event_gen; }
 	timespec getEventProcTime() { return t_event_proc; }
 	Packet& getEventPacket() { return event_pkt; }
-<<<<<<< HEAD
 	bool operator>(const Event& e)  const { return this->event_pri > e.event_pri; }
 	bool operator>=(const Event& e) const  { return this->event_pri >= e.event_pri; }
 	bool operator<(const Event& e)  const { return this->event_pri < e.event_pri; }
 	bool operator<=(const Event& e) const  { return this->event_pri <= e.event_pri; }
-=======
-	bool operator>(Event& e) { return event_pri > e.event_pri; }
-	bool operator<(Event& e) { return event_pri < e.event_pri; }
->>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
 	
+	std::string createEventInfo();
 private:
 	int event_no;
-	int event_gen_addr;
+	uint64_t event_gen_addr;
 	int event_handler_adrr;
 	int event_pri;
 	timespec t_event_gen;
 	timespec t_event_proc;
 	Packet event_pkt;
 	double t_elapsed_time_ms;
-<<<<<<< HEAD
 	std::shared_ptr<Session> pSession_;
-=======
-	std::shared_ptr<Session> pSession;
->>>>>>> a47a899b2fa2d48d198ca373cd7a857c218141dd
 	EventStatus eventStatus;
 };
 

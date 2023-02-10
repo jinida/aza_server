@@ -1183,8 +1183,7 @@ obj/main.o: src/main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/7/bits/stringfwd.h /usr/include/c++/7/bits/allocator.h \
  /usr/include/c++/7/bits/codecvt.h /usr/include/c++/7/bits/unique_ptr.h \
  /usr/include/c++/7/bits/quoted_string.h include/session.hpp \
- include/server.hpp include/event.hpp include/logger.hpp \
- /usr/include/c++/7/fstream \
+ include/server.hpp include/logger.hpp /usr/include/c++/7/fstream \
  /usr/include/x86_64-linux-gnu/c++/7/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++io.h \
  /usr/include/c++/7/bits/fstream.tcc /usr/local/include/spdlog/spdlog.h \
@@ -1236,8 +1235,8 @@ obj/main.o: src/main.cpp /usr/include/stdc-predef.h \
  /usr/local/include/spdlog/details/file_helper-inl.h \
  /usr/local/include/spdlog/sinks/base_sink.h \
  /usr/local/include/spdlog/sinks/base_sink-inl.h \
- /usr/local/include/spdlog/sinks/basic_file_sink-inl.h \
- /usr/local/include/spdlog/async.h \
+ /usr/local/include/spdlog/sinks/basic_file_sink-inl.h include/event.hpp \
+ include/logger.hpp /usr/local/include/spdlog/async.h \
  /usr/local/include/spdlog/async_logger.h \
  /usr/local/include/spdlog/async_logger-inl.h \
  /usr/local/include/spdlog/details/thread_pool.h \
