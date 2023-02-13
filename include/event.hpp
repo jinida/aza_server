@@ -21,10 +21,10 @@ public:
 		: body_length_(0)
 	{}
 	~Packet() = default;
-	const char* getData() const { return data_; }
+	const char* data() const { return data_; }
 	char* data() { return data_; }
 	std::size_t getLen() const { return LEN_HEADER + body_length_; }
-	const char* getBody() const { return data_ + LEN_HEADER; }
+	const char* body() const { return data_ + LEN_HEADER; }
 	char* body() { return data_ + LEN_HEADER; }
 	std::size_t getBodyLen() const { return body_length_; }
 	void setBodyLen(std::size_t body_length);
@@ -42,8 +42,8 @@ public:
 	Event() = default;
 	~Event() = default;
 	Event(int evt_no, int evt_pri, uint64_t genAddr);
-	Event(int evt_no, int evt_pri, uint64_t genAddr, Packet&& pkt);
 	Event(int evt_no, int evt_pri, uint64_t genAddr, std::shared_ptr<Session> pSession);
+	Event(int evt_no, int evt_pri, uint64_t genAddr, Packet pkt, std::shared_ptr<Session> pSession);
 	Event(const Event& evt);
 	void setEventNo(int evtNo) { event_no = evtNo; }
 	void setEventGenAddr(uint64_t evtGenAddr) { event_gen_addr = evtGenAddr; }

@@ -58,6 +58,17 @@ Event::Event(const Event& evt)
 	this->pSession_ = evt.pSession_;
 }
 
+Event::Event(int evt_no, int evt_pri, uint64_t genAddr, Packet pkt, std::shared_ptr<Session> pSession)
+{
+	this->event_no = evt_no;
+	this->event_pri = evt_pri;
+	this->event_gen_addr = genAddr;
+	this->event_handler_adrr = -1;
+	this->eventStatus = GENERATED;
+	this->pSession_ = pSession;
+	this->setEventPacket(pkt);
+}
+
 Event* genRandEvent(int evt_no)
 {
 	Event* pEv;
